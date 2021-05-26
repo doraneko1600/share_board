@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/*共通↓*/
+
+body {
+    min-height        : 100vh;
+    display           : flex;
+    flex-direction    : column;
+    background-image: url("../images/white_board.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+p,
+h1,
+h2,
+h3 {
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+img{
+    width: 30%;
+    height: auto;
+    position: absolute;
+    top: 14%;
+    right: 36%;
+}
+/*共通↑*/
+
+main {
+    text-align: center;
+    top: 30%;
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mail{
+    margin: auto auto;
+}
+
+main form {
+    width: 30rem;
+}
+
+main form p {
+    text-align: right;
+}
+
+main form p:nth-of-type(5) {
+    text-align : center;
+    margin-left: 9rem;
+}
+
+main form input {
+    height: 34px;
+    width : 200px;
+}
+
+main form input:nth-last-of-type(1) {
+    width: auto;
+}
+
+.contents {
+    position: relative;
+    left    : -14%;
+}
+
+.reset {
+    position: relative;
+    left    : -17%;
+}
+
+.buttom {
+    position: relative;
+    left: 14%;
+}
+
