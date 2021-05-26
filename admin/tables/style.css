@@ -1,0 +1,9 @@
+main {
+    text-align: center;
+    margin: auto auto;
+}
+
+.label td {
+    width: 182px;
+    padding-left: 10px;
+}
