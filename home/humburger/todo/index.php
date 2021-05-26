@@ -1,0 +1,208 @@
+<?php
+require("./select.php");
+require("header.php");
+require_once('../humburger.php');
+
+$sql = "SELECT * FROM todo ORDER BY id DESC";
+
+?>
+
+<body class="bg-light">
+  <div id="l-wrapper">
+    <div class="container-fluid">
+      <header class="header">
+        <h1 class="headerTitle">TO DO APP</h1>
+      </header>
+      <!-- /.header -->
+      <div class="row mainContainer">
+        <div class="col-md-8 col-xl-9 taskContainer">
+          <div id="stage">
+            <?php select($sql); // dbから出力 ?>
+          </div>
+          <div class="taskFormContainer bg-dark">
+            <!-- 送信フォーム-->
+            <form name="taskForm" id="js-taskForm" method="POST" action="./insert.php">
+              <div class="container-fluid py-3">
+                <div class="row">
+                  <!-- プルダウンdiv -->
+                  <div class="col-xl-5 mb-2 mb-xl-0">
+                    <div class="mb-1 small text-white">チーム
+                      <span class="badge badge-danger ml-2">※必須</span>
+                    </div>
+                    <div>
+
+                      <select name="team" class="form-control" required placeholder="タスクを入力してください">
+                      <?php team(); // dbに登録されてるチームを表示?>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-xl-5 mb-2 mb-xl-0">
+                    <div class="mb-1 small text-white">内容
+                      <span class="badge badge-danger ml-2">※必須</span>
+                    </div>
+                    <div>
+                      <!-- 内容のテキストエリア -->
+                      <input type="text" name="content" class="form-control" required placeholder="タスクを入力してください">
+                    </div>
+                  </div>
+                  <div class="col-xl row">
+                    <div class="col-sm-auto col-md-auto col-xl">
+                      <!-- 優先度選択エリア -->
+                      <div class="mb-1 small text-white">優先度
+                        <span class="badge badge-danger ml-2">※必須</span>
+                      </div>
+                      <div class="text-white">
+                        <label class="custom-control custom-radio">
+                            <input type="radio" name="priority" value="3" class="custom-control-input" required>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">高</span>
+                          </label>
+                        <label class="custom-control custom-radio">
+                            <input type="radio" name="priority" value="2" class="custom-control-input" checked>
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">中</span>
+                          </label>
+                        <label class="custom-control custom-radio">
+                            <input type="radio" name="priority" value="1" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">低</span>
+                          </label>
+                      </div>
+                    </div>
+                    <div class="col-auto col-sm-auto col-xl mb-3 mb-sm-0">
+                      <!-- 期限選択エリア -->
+                      <div class="mb-1 small text-white">期限</div>
+                      <input type="date" name="limit" class="form-control">
+                    </div>
+                    <div class="col-sm-auto col-lg col-xl align-self-center">
+                      <input type="submit" value="追加" class="btn btn-primary mb-1">
+                      <input type="reset" value="クリア" class="btn btn-secondary mb-1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.container -->
+            </form>
+            <!-- /.taskForm -->
+          </div>
+        </div>
+        <div class="col-md-4 col-xl-3">
+          <div class="sticky-top">
+            <div class="statusBox mb-4 mb-md-5" id="js-statusBox">
+              <table class="table table-bordered">
+                <tr>
+                  <th>現在のタスク総数</th>
+                  <td>
+                    <span class="totalCount">0</span>個
+                  </td>
+                </tr>
+                <tr>
+                  <th>残タスク数</th>
+                  <td>
+                    <span class="leftCount">0</span>個
+                  </td>
+                </tr>
+                <tr>
+                  <th>完了済みタスク数</th>
+                  <td>
+                    <span class="completeCount">0</span>個
+                    <div class="taskDeleteBtn js-none" id="js-taskDeleteBtn">
+                      <a href="#" class="small">完了済みタスクを削除</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>完遂率</th>
+                  <td>
+                    <span class="completionRate">0</span>％
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- /.statusBox -->
+            <div class="sortArea mb-3">
+              <h2 class="h6 font-weight-bold">タスクの並び替え</h2>
+              <div class="btn-group w-100 sortBtns" id="js-sort">
+                <button id="js-sort-priority" class="btn btn-outline-secondary w-50 js-sort-priority">優先度順</button>
+                <button id="js-sort-limit" class="btn btn-outline-secondary w-50 js-sort-limit">期限順</button>
+              </div>
+            </div>
+            <!-- /.sortArea -->
+            <div class="mb-4 mb-md-5">
+              <button class="btn btn-outline-danger w-100" id="js-removeAllItem">全タスク削除</button>
+            </div>
+            <div>
+              <h2 class="h6 font-weight-bold mb-3">本サイトについて</h2>
+              <h3 class="h6">閲覧推奨環境</h3>
+              <div class="small">
+                <dl class="row">
+                  <dt class="col-2">PC:</dt>
+                  <dd class="col-10">Chrome, Edge最新版</dd>
+                  <dt class="col-2">SP:</dt>
+                  <dd class="col-10">iOS11.0.3以上 iOS Safari, Chrome最新版</dd>
+                </dl>
+                <p>
+                  <a href="https://github.com/kde-space/TO_DO_APP" target="_blank">その他使い方などはこちら</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.mainContainer -->
+      <div class="modal" id="js-modal">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">編集</h5>
+              <button type="button" class="close js-modal-close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form name="taskEditForm" id="js-taskEdit">
+              <div class="modal-body">
+                <ul class="list-unstyled">
+                  <li>内容
+                    <input type="text" name="content" class="form-control" required>
+                  </li>
+                  <li>優先度
+                    <div>
+                      <label class="custom-control custom-radio">
+                          <input type="radio" name="priority" value="3" class="custom-control-input" required>
+                          <span class="custom-control-indicator"></span>
+                          <span class="custom-control-description">高</span>
+                        </label>
+                      <label class="custom-control custom-radio">
+                          <input type="radio" name="priority" value="2" class="custom-control-input" checked>
+                          <span class="custom-control-indicator"></span>
+                          <span class="custom-control-description">中</span>
+                        </label>
+                      <label class="custom-control custom-radio">
+                          <input type="radio" name="priority" value="1" class="custom-control-input">
+                          <span class="custom-control-indicator"></span>
+                          <span class="custom-control-description">低</span>
+                        </label>
+                    </div>
+                  </li>
+                  <li>期限
+                    <input type="date" name="limit" class="form-control">
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="完了">
+                <input type="reset" class="btn btn-secondary" value="クリア">
+              </div>
+            </form>
+            <!-- /.taskForm -->
+          </div>
+        </div>
+        <div class="modal-bg"></div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /#l-wrapper -->
+</body>
+
+</html>

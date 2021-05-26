@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+body {
+  text-align      : center;
+  background-color: white;
+}
+
+.flex {
+  display        : flex;
+  justify-content: flex-end;
+  flex-direction : row-reverse;
+}
+
+
+#scroll {
+  margin: 20px;
+  margin-top: 50px;
+  overflow-x      : hidden;
+  width           : 700px;
+  height          : 650px;
+  padding         : 5px;
+  border          : 1px solid #CCC;
+  box-shadow      : 0 0 10px rgba(0, 0, 0, 0.2);
+  color           : black;
+  line-height     : 1.5em;
+  background-color: aliceblue;
+}
+
+.head {
+  position   : fixed;
+  text-align : center;
+  font-weight: bold;
+  width      : 685px;
+  height     : 25px;
+  background : linear-gradient(to right, #c1e0ffa2 0%, #c1ffe0b0 80% 100%);
+}
+
+select {
+  width : 125px;
+  height: 30px;
+}
+
+.box {
+  /*display: flex;*/
+  width: 100%;
+}
+
+.left {
+  text-align      : left;
+  background-color: aliceblue;
+  padding         : 10px;
+}
+
+.left p {
+  text-align: left;
+  display   : inline-block;
+}
+
+.right {
+  text-align      : right;
+  background-color: aliceblue;
+  padding         : 10px;
+}
+
+.right p {
+  text-align: right;
+  display   : inline-block;
+}
+
+.me{
+  border: solid 2px #c1ffe0;
+  background-color: #c1ffe0;
+  overflow-wrap: normal;
+}
+
+
+.partner{
+  border: solid 2px #c1e0ff;
+  background-color: #c1e0ff;
+  overflow-wrap: normal;
+}
+
+.form {
+  padding   : 2% 10% 5% 5%;
+  text-align: left;
+}
+
+.line {
+  text-decoration: underline;
+}
+
+.home {
+  margin-top      : 10%;
+  display         : inline-block;
+  border          : 1px solid #000000;
+  border-radius   : 5%;
+  /* 角丸       */
+  font-size       : 11pt;
+  /* 文字サイズ */
+  text-align      : center;
+  /* 文字位置   */
+  cursor          : pointer;
+  /* カーソル   */
+  padding         : 20px 12px;
+  /* 余白       */
+  background      : #EFEFEF;
+  /* 背景色     */
+  color           : #000000;
+  /* 文字色     */
+  line-height     : 1em;
+  /* 1行の高さ  */
+  opacity         : 1;
+  /* 透明度     */
+  transition      : .2s;
+  /* なめらか変化 */
+  /*box-shadow    : 0 0 10px rgba(0, 0, 0, 0.2);  /* 影の設定 */
+}
+
+.home:hover {
+  border    : 1px solid #000000;
+  box-shadow: none;
+  /* カーソル時の影消去 */
+  opacity   : 0.8;
+  /* カーソル時透明度 */
+}
+
+/*.team{
+  text-align: left;
+}
+
+.message{
+  width: 300px;
+  height: 300px;
+}*/
+
+
+/*homeの枠の線の統一

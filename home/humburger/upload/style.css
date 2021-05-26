@@ -1,0 +1,60 @@
+body main {
+    text-align: center;
+    margin: auto auto;
+}
+    
+span {
+    background-color: #fce90d;
+}
+    
+.team_select {
+    padding: 10px 0 0 0;
+}
+
+.title{
+    position: relative;
+    top: 50px;
+    left: 100px;
+}
+
+.index {
+    text-align: center;
+    margin: auto auto;
+}
+
+/* ホームに戻るボタン */
+.home {
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 5%;
+    /* 角丸       */
+    font-size: 11pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 15px;
+    /* 余白       */
+    background: #EFEFEF;
+    /* 背景色     */
+    color: #000000;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    opacity: 1;
+    /* 透明度     */
+    transition: .2s;
+    /* なめらか変化 */
+    position: absolute;
+    right: 5px;
+    bottom: 5px
+}
+
+.home:hover {
+    border: 1px solid #000000;
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    opacity: 0.8;
+    /* カーソル時透明度 */
+}

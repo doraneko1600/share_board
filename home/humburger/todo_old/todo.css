@@ -1,0 +1,380 @@
+@charset "UTF-8";
+.block {
+    display: inline-block;
+}
+
+
+/* スクロール内 */
+
+#scroll {
+    margin: 0 auto;
+    overflow-x: hidden;
+    padding: 5px;
+    margin-left: 10px;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    line-height: 1.5em;
+    background-color: aliceblue;
+}
+
+
+/* 予定を繰り返し表示する部分のヘッダーとフッターを除いた高さ  */
+
+.margin {
+    margin-top: 110px;
+    margin-bottom: 120px;
+}
+
+.show {
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 5px;
+    width: 1200px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.show h4:nth-of-type(1) {
+    width: 200px;
+    margin-left: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.show p:nth-of-type(1) {
+    width: 250px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.show p:nth-of-type(2) {
+    width: 150px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.show p:nth-of-type(3) {
+    width: 150px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+/* ヘッダー部分 */
+
+.todo-title {
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    height: 60px;
+    width: 1200px;
+    top: 44px;
+    left: 0;
+    margin-top: 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* チーム名 */
+
+.todo-title p:nth-of-type(1) {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 34px;
+    margin-bottom: 0px;
+}
+
+
+/* タスク名 */
+
+.todo-title p:nth-of-type(2) {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 21px;
+    margin-bottom: 0px;
+}
+
+
+/* 詳細 */
+
+.todo-title p:nth-of-type(3) {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+
+
+/* 期限 */
+
+.todo-title p:nth-of-type(4) {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 82px;
+    margin-bottom: 0px;
+}
+
+
+/* 優先度 */
+
+.todo-title p:nth-of-type(5) {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 76px;
+    margin-right: 60px;
+    margin-bottom: 0px;
+}
+
+
+/* ひとつ分の予定 */
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1100px;
+    justify-content: space-around;
+    margin-left: 20px;
+}
+
+.change {
+    width: 100px;
+    display: flex;
+    margin-left: 90%;
+    position: relative;
+    top: -110px;
+    margin-right: 50px;
+}
+
+.change [type=submit] {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* チーム表示部分 */
+
+.team {
+    width: 140px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+
+
+/* チーム表示部分のプルダウン */
+
+select {
+    height: 40px;
+    width: 120px;
+}
+
+
+/* 詳細入力部分のサイズ固定 */
+
+textarea {
+    resize: none;
+    width: 200px;
+}
+
+
+/* input type = text,date をまとめてサイズ指定 */
+
+input[type=text],
+input[type=date] {
+    width: 152px;
+    height: 40px;
+}
+
+
+/* 優先度の高・中・低を横に並べる */
+
+.rank {
+    display: flex;
+    flex-wrap: wrap;
+    width: 180px;
+    padding-left: 30px;
+    margin-top: 0px;
+}
+
+.rank label:nth-of-type(-n+3) {
+    padding-left: 10px;
+}
+
+
+/*ニコマークの文字色*/
+
+.high {
+    color: #ea5550;
+    font-size: 25px;
+}
+
+.mid {
+    color: #fcc800;
+    font-size: 25px;
+}
+
+.low {
+    color: #618e34;
+    font-size: 25px;
+}
+
+/*完了チェック*/
+
+.complete {
+    text-align: left;
+    position: relative;
+    top: 80px;
+    height: 50px;
+}
+
+.complete .check {
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: all 0.15s ease-out 0s;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    background: #ffffff;
+    -webkit-appearance: none;
+    appearance: none;
+    border: solid 1px #000000;
+}
+
+.complete .check:hover {
+    background: darkseagreen;
+}
+
+.complete .check:checked {
+    background: green;
+}
+
+.complete .check:checked::before {
+    font-size: 20px;
+    line-height: 30px;
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    content: '✔';
+    text-align: center;
+}
+
+
+/* 入力欄 */
+
+.input {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    justify-content: space-around;
+    margin-left: 20px;
+}
+
+
+/* 入力欄の追加ボタン */
+
+.input p:nth-of-type(6) {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+
+/* 予定ごとに引く線の長さ */
+
+hr {
+    width: 1140px;
+    text-align: left;
+    margin-left: 0px;
+}
+
+
+/* ホームに戻るボタン */
+
+.home {
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 5%;
+    /* 角丸       */
+    font-size: 11pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 15px;
+    /* 余白       */
+    background: #EFEFEF;
+    /* 背景色     */
+    color: #000000;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    opacity: 1;
+    /* 透明度     */
+    transition: .2s;
+    /* なめらか変化 */
+    position: absolute;
+    right: 5px;
+    bottom: 5px
+}
+
+.home:hover {
+    border: 1px solid #000000;
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    opacity: 0.8;
+    /* カーソル時透明度 */
+}
+
+
+/* フッター部分(入力欄) */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #d9d9d9;
+}
+
+
+/* 表示方法選択部分 */
+
+.sort {
+    flex-wrap: wrap;
+    text-align: right;
+    position: absolute;
+    top: 100px;
+    left: 80%;
+    width: 200px;
+    height: 300px;
+}
+
+.sort input:nth-of-type(2) {
+    flex-wrap: wrap;
+}
+
+.sort input:nth-of-type(4) {
+    flex-wrap: wrap;
+}
+
+.line {
+    margin-bottom: 0rem;
+}
+
+.statement {
+    position: absolute;
+    top: 300px;
+    width: 160px;
+    left: 40%;
+}

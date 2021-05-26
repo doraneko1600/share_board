@@ -1,0 +1,62 @@
+.js-none {
+  display: none !important;
+}
+
+.js-active {
+  display: block !important;
+}
+
+.headerTitle {
+  font-weight: lighter;
+  font-size: 3.5rem;
+}
+
+@media (max-width: 575px) {
+  .headerTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .taskContainer {
+    margin-bottom: 2rem;
+  }
+}
+
+.taskItem .taskStatus {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.taskItem.is-3 {
+  background-color: #fff6db;
+}
+
+.taskItem.is-1 {
+  background-color: #eefcff;
+}
+
+.taskItem.is-over {
+  border-color: rgba(0, 0, 0, 0.125);
+  border-left-width: 1px;
+  background-color: #f8d7da;
+}
+
+.taskItem.is-complete {
+  border-color: rgba(0, 0, 0, 0.125);
+  border-left-width: 1px;
+  background-color: #aaa;
+}
+
+.mainContainer {
+  padding-bottom: 50px;
+}
+
+.taskFormContainer {
+  border-radius: .25rem;
+}
+
+.btn, label {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

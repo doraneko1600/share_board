@@ -1,0 +1,40 @@
+.nav {
+    margin: 20px 0;
+}
+
+.nav ul {
+    display   : table;
+    margin    : 0 auto;
+    padding   : 0;
+    width     : 80%;
+    text-align: center;
+}
+
+.nav li {
+    display  : table-cell;
+    min-width: 50px;
+}
+
+.nav a {
+    display        : block;
+    width          : 100%;
+    text-decoration: none;
+    color          : #565656;
+    padding-bottom : 5px;
+}
+
+
+.nav li.current {
+    border-bottom   : 3px solid #5ab4bd;
+    background-color: #5ab4bd;
+    color           : #fff;
+}
+
+.nav li.current a {
+    color: #fff;
+}
+
+.nav li:hover {
+    color        : #d9d9d9;
+    border-bottom: 3px solid #d9d9d9;
+}

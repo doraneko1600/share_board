@@ -1,0 +1,189 @@
+.margin {
+	margin: 0;
+}
+
+/***横型カレンダー***/
+table.calendar {
+	width: 100%;
+}
+
+table.calendar th,
+table.calendar td {
+	padding         : 16px;
+	background-color: #FFF;
+	text-align      : center;
+	border          : 1px solid #CCC;
+	background-color: transparent;
+}
+
+/* 行の最初のtdは日曜日なため赤く */
+table.calendar th:first-of-type,
+table.calendar td:first-of-type {
+	background-color: #ffefef;
+	color           : #FF0000;
+	font-weight     : bold;
+}
+
+/* 行の最後のtdは土曜日なため青く */
+table.calendar th:last-of-type,
+table.calendar td:last-of-type {
+	background-color: #ededff;
+	color           : #0000FF;
+	font-weight     : bold;
+}
+
+tr {
+	background-color: transparent;
+}
+
+table.calendar td.today {
+	background-color: #fbffa3;
+	font-weight     : bold;
+}
+
+table.calendar td.plan {
+	background-color: #97ff8a;
+	font-weight     : bold;
+}
+
+table.calendar td.today_plan {
+	background-color: #21ff04;
+	font-weight     : bold;
+}
+
+table.calendar a.widelink,
+a.today_widelink {
+	display: block;
+}
+
+table.calendar a.widelink_team,
+a.today_widelink_team {
+	display: block;
+}
+
+.modal {
+	display : none;
+	height  : 100vh;
+	position: fixed;
+	top     : 0;
+	width   : 100%;
+}
+
+.modal__bg {
+	background: rgba(0, 0, 0, 0.8);
+	height    : 100vh;
+	position  : absolute;
+	width     : 100%;
+}
+
+.modal__content {
+	background: #fff;
+	left      : 50%;
+	padding   : 40px;
+	position  : absolute;
+	top       : 50%;
+	transform : translate(-50%, -50%);
+	width     : 60%;
+	text-align: center;
+}
+
+/***縦型カレンダー***/
+table.calender_column {
+	width : 100%;
+	margin: 0 auto;
+}
+
+table.calender_column td {
+	padding: 5px;
+	border : 1px solid #CCC;
+}
+
+/* 日曜日 */
+table.calender_column tr.week0 {
+	background-color: #ffefef;
+	color           : #FF0000;
+}
+
+/* 土曜日 */
+table.calender_column tr.week6 {
+	background-color: #ededff;
+	color           : #0000FF;
+}
+
+/* 今日 */
+table.calender_column tr.today {
+	background-color: #fbffa3;
+	font-weight     : bold;
+}
+
+/* 予定 */
+table.calender_colume tr.plans {
+	background-color: #ffd400;
+}
+
+table.calender_column td:first-child {
+	width     : 20%;
+	text-align: center;
+}
+
+table.calender_column td:last-child {
+	width: 80%;
+	color: #111111;
+}
+
+/*タブ切り替え*/
+.tabs {
+	margin-top    : 50px;
+	padding-bottom: 40px;
+	box-shadow    : 0 0 10px rgba(0, 0, 0, 0.2);
+	width         : 800px;
+	height        : 600px;
+	margin        : 0 auto;
+}
+
+/*タブのスタイル*/
+.tab_item {
+	width           : calc(100%/2);
+	height          : 50px;
+	border-bottom   : 3px solid #5ab4bd;
+	background-color: #d9d9d9;
+	line-height     : 50px;
+	font-size       : 16px;
+	text-align      : center;
+	color           : #565656;
+	display         : block;
+	float           : left;
+	text-align      : center;
+	font-weight     : bold;
+	transition      : all 0.2s ease;
+}
+
+.tab_item:hover {
+	opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+	display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+	display : none;
+	padding : 40px 40px 0;
+	clear   : both;
+	overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#vertical:checked~#vertical_content,
+#horizontal:checked~#horizontal_content {
+	display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked+.tab_item {
+	background-color: #5ab4bd;
+	color           : #fff;
+}
