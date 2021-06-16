@@ -1,10 +1,11 @@
 <?php
-  if (!isset($_SESSION)) {
-    session_start();
-}
 /**
  * dbからselectした内容の表示(関数化)
  */
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 require_once('../../../config.php');
 require_once('../../../function.php');
 function select($sql)
@@ -34,12 +35,12 @@ function select($sql)
 							<div class="">
 								<dl class="d-inline-block mb-0 mr-3">
 									<dt class="d-inline-block">優先度</dt>
-									<dd class="d-inline-block">{$select_rank}</dd>
+									<dd class="d-inline-block" id="js-rank">{$select_rank}</dd>
 								</dl>
 								
 								<dl class="d-inline-block mb-0">
 									<dt class="d-inline-block">期限</dt>
-									<dd class="d-inline-block">{$select_period}</dd>
+									<dd class="d-inline-block" id="js-period">{$select_period}</dd>
 								</dl>
 								
 							</div>
@@ -47,13 +48,13 @@ function select($sql)
 								<ul class="list-inline">
 									<li class="list-inline-item">
 										<label class="custom-control custom-checkbox">
-											<input type="checkbox" class="custom-control-input js-completeItem">
+											<input type="checkbox" class="custom-control-input js-completeItem"  id="js-done">
 											<span class="custom-control-indicator border border-secondary"></span>
 											<span class="custom-control-description">完了</span>
 										</label>
 									</li>
 									<li class="list-inline-item">
-										<button class="btn btn-secondary btn-sm js-editItem">編集</button>
+										<button class="btn btn-secondary btn-sm js-editItem" id="js-edit">編集</button>
 									</li>
 								</ul>
 							</div>

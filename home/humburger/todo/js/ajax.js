@@ -24,3 +24,7 @@ $(document).on("click", "#js-sort-priority, #js-sort-limit", function() {
       console.log("error");
     })
 });
+
+$(document).on("click", "js-done", function() {
+  console.log("done");
+});
